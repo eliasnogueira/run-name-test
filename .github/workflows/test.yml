@@ -61,6 +61,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-      - name: Run Health Check Tests
+      steps:
+        - name: Run Health Check Tests
+        shell: bash
         run: echo "Nothing there"
 
