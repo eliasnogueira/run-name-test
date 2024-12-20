@@ -1,6 +1,7 @@
 name: Build and Test
 
-run_name: "E2E Tests: Business | Journey: ${{ inputs.targeting-journey }} | Env: @${{ inputs.environment }} | Favor: @${{ inputs.business-banking-web-app }} "
+run-name: "E2E Tests: Business | Journey: ${{ inputs.targeting-journey }} | Env: @${{ inputs.environment }} | Favor: @${{ inputs.business-banking-web-app }} "
+
 on:
   workflow_dispatch:
     inputs:
