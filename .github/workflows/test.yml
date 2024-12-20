@@ -1,0 +1,66 @@
+name: Build and Test
+
+run_name: "E2E Tests: Business | Journey: ${{ inputs.targeting-journey }} | Env: @${{ inputs.environment }} | Favor: @${{ inputs.business-banking-web-app }} "
+on:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: 'Environment:'
+        required: true
+        default: mb-stg
+        type: choice
+        options:
+          - mbdev
+          - mb-stg
+          - mb-stable
+          - bus-stable
+
+      business-banking-web-app:
+        description: 'Business Banking Web App'
+        type: choice
+        required: true
+        default: 'US'
+        options:
+          - 'US'
+          - 'Universal'
+
+      targeting-journey:
+        description: 'Targeting journey'
+        type: choice
+        required: true
+        options:
+          - Account Statements
+          - Accounts & Transactions
+          - App Foundation (Navigation)
+          - App Foundation (Remote Config)
+          - Appointments
+          - Authentication
+          - Batches
+          - Cards
+          - Cashflow Forecasting
+          - Contact Manager
+          - Context Selection
+          - Dashboard
+          - Direct Debit (Universal Only)
+          - Entitlements (Access Control)
+          - Entitlements (Approvals)
+          - Entitlements (Limits)
+          - Loans
+          - Messages
+          - Notifications
+          - Payments
+          - Places
+          - Positive Pay ACH
+          - Positive Pay Check
+          - Product Explorer
+          - Product Summary
+          - Real Time Communication
+          - Stop Checks
+          - User Self-Service
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+      - name: Run Health Check Tests
+        run: echo "Nothing there"
+
